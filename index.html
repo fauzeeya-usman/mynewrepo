@@ -11,6 +11,179 @@
     <link rel="stylesheet" href="style.css" />
     <title>Home</title>
   </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@200&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    /* NAVBAR STYLING STARTS */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 50px;
+      padding-right: 40px;
+      background-color: rgb(8, 8, 8);
+      color: #fff;
+      gap: 1em;
+      font-size: 18px;
+    }
+
+    /* LOGO */
+    .logo {
+      font-size: 20px;
+    }
+
+    /* NAVBAR nav-links */
+    .nav-links a {
+      color: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1em;
+      font-size: 18px;
+    }
+
+    .hover-underline {
+      display: inline-block;
+      position: relative;
+      color: #ea5455;
+    }
+
+    .hover-underline:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 0.5px;
+      bottom: 0;
+      left: 0;
+      background-color: #ea5455;
+      transform-origin: bottom center;
+      transition: transform 0.5s ease-out;
+    }
+
+    .hover-underline:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom center;
+    }
+
+    .nav-links li {
+      padding: 2px 15px;
+    }
+
+    /* DROPDOWN nav-links */
+    .services {
+      position: relative;
+    }
+
+    .dropdown {
+      background-color: #000000;
+      padding: 20px 6px 5px;
+      position: absolute;
+      margin-left: -29px;
+      display: none;
+      border-radius: 2px;
+      top: 30px;
+      font-size: 17px;
+      transition: transform 0.7s ease-in-out;
+    }
+
+    .dropdown li + li {
+      margin-top: 2px;
+    }
+
+    .dropdown li {
+      padding: 0.2em 0.5em;
+      width: 7em;
+      text-align: center;
+      transition: transform 0.7s ease-in-out;
+    }
+
+    .dropdown li:hover {
+      background-color: #ffffff3d;
+      transition: transform 0.7s ease-in-out;
+    }
+
+    .services:hover .dropdown {
+      display: block;
+    }
+
+    /* RESPONSIVE NAVBAR links STARTS */
+
+    /* CHECKBOX HACK */
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      background-color: #ffffff;
+      user-select: none;
+    }
+
+    /* APPLYING MEDIA QUERIES */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        background-color: ffffff;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+      }
+
+      .nav-links li:hover {
+        display: inline-block;
+        background-color: #ffffff3d;
+        transition: 0.3s ease;
+      }
+      .nav-links li + li {
+        margin-top: 12px;
+      }
+
+      input[type="checkbox"]:checked ~ .nav-links {
+        display: block;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .dropdown {
+        left: 50%;
+        top: 30px;
+        transform: translateX(35%);
+      }
+
+      .dropdown li:hover {
+        background-color: #ffffff3d;
+      }
+    }
+  </style>
   <body>
     <!--Navbar-->
     <header>
